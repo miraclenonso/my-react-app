@@ -56,17 +56,17 @@ function UploadQuizForm() {
   const generateTopics = () => {
     const topicMap = {
       physics: [
-        'Mechanics', 'Thermodynamics', 'Waves', 'Electricity', 'Magnetism',
-        'Modern Physics', 'Optics', 'Measurement', 'Motion', 'Energy',
-        'Work and Power', 'Circular Motion', 'Simple Harmonic Motion',
-        'Gravitation', 'Elasticity', 'Fluid Mechanics', 'Heat Transfer',
-        'Gas Laws', 'Wave Motion', 'Sound Waves', 'Electrostatics',
-        'Current Electricity', 'Electromagnetic Induction', 'AC Circuits',
-        'Quantum Physics', 'Nuclear Physics', 'Semiconductors', 'Capacitors',
-        'Resistors', 'Transformers', 'Diodes', 'Transistors', 'Logic Gates',
-        'Projectiles', 'Friction', 'Density', 'Pressure', 'Viscosity',
-        'Surface Tension', 'Thermal Expansion', 'Simple Machines', 'Lenses',
-        'Mirrors', 'Dispersion of Light', 'Polarization', 'Radioactivity'
+        "Measurements and Unit", "Scalars and Vectors", "Motion", "Gravitational field", "Equilibrium of Forces", 
+        "Work, Energy and Power", "Friction", "Simple Machines", "Elasticity", "Pressure", "Liquids At Rest", 
+        "Temperature and Its Measurement", "Thermal Expansion", "Gas Laws", "Quantity of Heat", "Change of State",
+        "Vapours", "Structure of Matter and Kinetic Theory", "Heat Transfer", "Waves", 
+        "Propagation of Sound Waves", "Characteristics of Sound Waves", 
+        "Light Energy", "Reflection of Light at Plane and Curved Surfaces", 
+        "Refraction of Light Through at Plane and Curved Surfaces", "Optical Instruments", 
+        "Dispersion of light and colours", "Electrostatics", "Capacitors", "Electric Cells", "Current Electricity",
+        "Electrical Energy and Power", "Magnets and Magnetic Fields", 
+        "Force on a Current-Carrying Conductor in a Magnetic Field", "Electromagnetic Induction", 
+        "Simple A. C. Circuits", "Conduction of Electricity Through", "Elementary Modern Physics", "Introductory Electronics"
       ],
       chemistry: [
         "Separation of mixtures and purification of chemical substances", 
