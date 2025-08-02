@@ -105,6 +105,32 @@ select {
     font-size: 1rem;
     transition: var(--transition);
     width: 100%;
+    background-color: #ffffff !important;
+    /* Force white background */
+    color: #000000 !important;
+    /* Force black text */
+    -webkit-text-fill-color: #000000 !important;
+    /* For Safari */
+}
+
+/* For autofill backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* For dark mode override */
+@media (prefers-color-scheme: dark) {
+
+    input[type="text"],
+    textarea,
+    select {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
 }
 
 input[type="text"]:focus,
@@ -161,6 +187,35 @@ textarea {
     height: 10px;
     background: var(--primary-color);
     border-radius: 50%;
+}
+
+.preview-btn {
+    background-color: #3a0ca3;
+    /* Purple color - change this to your desired color */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.preview-btn:hover {
+    background-color: #480ca8;
+    /* Slightly darker purple for hover */
+    transform: translateY(-2px);
+}
+
+.preview-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
 }
 
 /* Buttons */
