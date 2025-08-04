@@ -69,13 +69,6 @@ function QuestionPreview() {
       if (error) throw error;
 
       setStatusMessage('✅ Question submitted successfully!');
-      
-      if (typeof window !== 'undefined' && window.Notification) {
-        new Notification('Question Uploaded', {
-          body: 'Your question has been successfully uploaded to the database!',
-          icon: '/notification-icon.png'
-        });
-      }
 
       navigate('/upload', { 
         state: { 
