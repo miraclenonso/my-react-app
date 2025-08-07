@@ -152,6 +152,12 @@ function QuestionPreview() {
           margin-top: 16px;
         }
 
+        .table-container {
+          overflow-x: auto;
+          width: 100%;
+          margin-top: 16px;
+        }
+
         th, td {
           border: 1px solid #ccc;
           padding: 8px;
