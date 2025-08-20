@@ -11,6 +11,7 @@ const subjects = [
   { id: 'government', name: 'Government', color: '#7209b7' },
   { id: 'economics', name: 'Economics', color: '#560bad' },
   { id: 'commerce', name: 'Commerce', color: '#480ca8' },
+  { id: 'crs', name: 'Crs', color: '#7209b7' },
 ];
 
 function SubjectSelection() {
