@@ -47,7 +47,8 @@ function UploadQuizForm() {
       english: 'English',
       government: 'Government',
       economics: 'Economics',
-      commerce: 'Commerce'
+      commerce: 'Commerce',
+      crs: 'Crs'
     };
     return subjectMap[subject] || subject;
   };
