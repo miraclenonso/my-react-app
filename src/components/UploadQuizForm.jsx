@@ -67,7 +67,7 @@ function UploadQuizForm() {
         "Dispersion of light and colours", "Electrostatics", "Capacitors", "Electric Cells", "Current Electricity",
         "Electrical Energy and Power", "Magnets and Magnetic Fields", 
         "Force on a Current-Carrying Conductor in a Magnetic Field", "Electromagnetic Induction", 
-        "Simple A. C. Circuits", "Conduction of Electricity Through", "Elementary Modern Physics", "Introductory Electronics"
+        "Simple A. C. Circuits", "Conduction of Electricity", "Elementary Modern Physics", "Introductory Electronics"
       ],
       chemistry: [
         "Separation of mixtures and purification of chemical substances", 
