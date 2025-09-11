@@ -82,7 +82,7 @@ function UploadQuizForm() {
         "Nutrition", "Transport", "Respiration", "Excretion", "Support and movement", "Reproduction", "Growth", 
         "Co-ordination and control", "Factors affecting the distribution of Organisms", 
         "Symbiotic interactions of plants and animals", "Natural Habitats", "Local (Nigerian) Biomes", 
-        "The Ecology of Populations", "SOIL", "Humans and Environment", "Variation In Population", "Heredity", 
+        "The Ecology of Populations", "Soil", "Humans and Environment", "Variation In Population", "Heredity", 
         "Theories of evolution", "Evidence of evolution"
       ],
       mathematics: [
