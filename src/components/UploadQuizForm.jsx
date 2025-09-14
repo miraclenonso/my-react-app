@@ -78,7 +78,7 @@ function UploadQuizForm() {
         "Metals and their compounds", "Organic Compounds", "Chemistry and Industry"
       ],
       biology: [
-        "Living organisms", "Evolution", "Variety of Organisms", "Internal structure of a flowering plant", "Internal structure of a mammal", 
+        "Living organisms", "Evolution", "Variety of Organisms", "Internal structure of a flowering plant and mammal", 
         "Nutrition", "Transport", "Respiration", "Excretion", "Support and movement", "Reproduction", "Growth", 
         "Co-ordination and control", "Factors affecting the distribution of Organisms", 
         "Symbiotic interactions of plants and animals", "Natural Habitats", "Local (Nigerian) Biomes", 
