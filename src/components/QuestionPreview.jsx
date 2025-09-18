@@ -6,8 +6,10 @@ import { supabase } from '../supabaseClient';
 function QuestionPreview() {
   const { state } = useLocation();
   const subject = state?.subject || '';
-  const tableName = subject.toLowerCase() === 'english' 
-    ? 'utme_english_language_questions' 
+  const tableName = subject.toLowerCase() === 'english'
+  ? 'utme_english_language_questions'
+  : subject.toLowerCase() === 'novel'
+    ? 'utme_reading_text_questions'
     : `utme_${subject.toLowerCase()}_questions`;
 
   useEffect(() => console.log('Table name:', tableName), []);
