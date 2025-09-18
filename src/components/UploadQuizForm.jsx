@@ -269,6 +269,10 @@ const getTableName = () => {
         trimmedData.order_number = formData.order_number ? parseInt(formData.order_number) : null;
       }
 
+      if (subject === 'novel') {
+        delete trimmedData.question_image;
+      }
+
       const { error } = await supabase
         .from(tableName)
         .insert([trimmedData]);
