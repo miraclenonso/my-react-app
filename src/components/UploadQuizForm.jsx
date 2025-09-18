@@ -37,7 +37,7 @@ const getTableName = () => {
 
   const tableMap = {
     english: 'utme_english_language_questions',
-    novel: 'utme_reading_text',
+    novel: 'utme_reading_text_questions',
     physics: 'utme_physics_questions',
     chemistry: 'utme_chemistry_questions',
     biology: 'utme_biology_questions',
@@ -338,13 +338,19 @@ const getTableName = () => {
         />
         {errors.question && <span className="error-message">{errors.question}</span>}
 
-        <label>Question Image (URL):</label>
-        <input 
-          type="text" 
-          name="question_image" 
-          value={formData.question_image} 
-          onChange={handleChange} 
-        />
+      
+        {/* Only show Question Image field if not Reading Text */}
+        {subject !== 'novel' && (
+          <>
+            <label>Question Image (URL):</label>
+            <input 
+              type="text" 
+              name="question_image" 
+              value={formData.question_image} 
+              onChange={handleChange} 
+            />
+          </>
+        )}
 
         <label>Option A: <span className="required">*</span></label>
         <input 
