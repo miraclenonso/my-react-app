@@ -150,6 +150,10 @@ function UploadQuizForm() {
         "Christians as joint heirs with Christ", "Humility", "Forgiveness", "Spiritual gifts", 
         "Christian Giving", "Civic responsibility", "Dignity of labour", "The second coming of Christ", 
         "Impartiality", "Effective prayer", "Christian living in the community", "Corruption", "Sexual Immorality"
+      ],
+      novel: [
+        "Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4", "Chapter 5", "Chapter 6", "Chapter 7", "Chapter 8", "Chapter 9",
+        "Chapter 10", "Chapter 11", "Chapter 12"
       ]
     };
 
