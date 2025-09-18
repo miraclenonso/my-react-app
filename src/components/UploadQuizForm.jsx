@@ -32,10 +32,24 @@ function UploadQuizForm() {
   const isBlank = (str) => !str || !str.trim();
 
   // Convert subject parameter to proper table name format
-  const getTableName = () => {
-    if (!subject) return '';
-    return `utme_${subject.toLowerCase()}_questions`;
+const getTableName = () => {
+  if (!subject) return '';
+
+  const tableMap = {
+    english: 'utme_english_language_questions',
+    novel: 'utme_reading_text',
+    physics: 'utme_physics_questions',
+    chemistry: 'utme_chemistry_questions',
+    biology: 'utme_biology_questions',
+    mathematics: 'utme_mathematics_questions',
+    government: 'utme_government_questions',
+    economics: 'utme_economics_questions',
+    commerce: 'utme_commerce_questions',
+    crs: 'utme_crs_questions'
   };
+
+  return tableMap[subject] || `utme_${subject.toLowerCase()}_questions`;
+};
 
   // Map subject IDs to display names
   const getSubjectDisplayName = () => {
