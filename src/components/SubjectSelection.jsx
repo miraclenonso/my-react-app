@@ -12,7 +12,7 @@ const subjects = [
   { id: 'economics', name: 'Economics', color: '#560bad' },
   { id: 'commerce', name: 'Commerce', color: '#480ca8' },
   { id: 'crs', name: 'Crs', color: '#7209b7' },
-  { id: 'novel', name: 'The Lekki Headmaster', color: '#7209b7' },
+  { id: 'novel', name: 'Reading Text', color: '#7209b7' },
 ];
 
 function SubjectSelection() {
