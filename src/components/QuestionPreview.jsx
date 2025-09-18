@@ -47,6 +47,17 @@ function QuestionPreview() {
             order_number: questionData.order_number ? parseInt(questionData.order_number) : null
           })
         };
+      } else if (subject.toLowerCase() === 'novel') {
+        submissionData = {
+          question: questionData.question || '',
+          option_a: questionData.option_a || '',
+          option_b: questionData.option_b || '',
+          option_c: questionData.option_c || '',
+          option_d: questionData.option_d || '',
+          correct_option: questionData.correct_option || '',
+          explanation: questionData.explanation || '',
+          topic: questionData.topic || ''
+        };
       } else {
         submissionData = {
           question: questionData.question || '',
