@@ -44,11 +44,12 @@ function UploadQuizForm() {
       chemistry: 'Chemistry',
       biology: 'Biology',
       mathematics: 'Mathematics',
-      english: 'English',
+      english: 'English Language',
       government: 'Government',
       economics: 'Economics',
       commerce: 'Commerce',
-      crs: 'Crs'
+      crs: 'Crs',
+      novel: 'Reading Text'
     };
     return subjectMap[subject] || subject;
   };
