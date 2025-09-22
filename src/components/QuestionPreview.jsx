@@ -274,13 +274,6 @@ function QuestionPreview() {
           
           <p className="preview-question">{questionData.question}</p>
           
-          {subject.toLowerCase() === 'english' && isClozeOrComprehension && questionData.passage && (
-            <div className="preview-passage">
-              <h4>Passage:</h4>
-              <p>{questionData.passage}</p>
-            </div>
-          )}
-          
           <div className="preview-options">
             {['A', 'B', 'C', 'D'].map(opt => (
               <div 
@@ -307,19 +300,24 @@ function QuestionPreview() {
           )}
           
           {subject.toLowerCase() === 'english' && isClozeOrComprehension && (
-            <>
-              {questionData.group_id && (
-                <div className="preview-topic">
-                  <strong>Group ID:</strong> {questionData.group_id}
-                </div>
-              )}
-              {(questionData.order_number || questionData.order_number === 0) && (
-                <div className="preview-topic">
-                  <strong>Order Number:</strong> {questionData.order_number}
-                </div>
-              )}
-            </>
-          )}
+  <>
+    {questionData.passage && (
+      <div className="preview-passage">
+        <h4>Passage:</h4>
+        <p>{questionData.passage}</p>
+      </div>
+    )}
+
+    <div className="preview-topic">
+      <strong>Group ID:</strong> {questionData.group_id || '—'}
+    </div>
+
+    <div className="preview-topic">
+      <strong>Order Number:</strong> {questionData.order_number ?? '—'}
+    </div>
+  </>
+)}
+
         </div>
         
         <div className="preview-actions">
