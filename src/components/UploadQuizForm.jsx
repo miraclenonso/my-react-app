@@ -108,18 +108,8 @@ const getTableName = () => {
         "Measures of Dispersion", "Permutation and Combination", "Probability"
       ],
       english: [
-        'Comprehension', 'Summary', 'Lexis and Structure', 'Oral English',
-        'Grammar', 'Vocabulary', 'Synonyms', 'Antonyms', 'Idioms',
-        'Phrasal Verbs', 'Figures of Speech', 'Essay Writing', 'Letter Writing',
-        'Report Writing', 'Speech Writing', 'Debate', 'Reading Skills',
-        'Listening Skills', 'Speaking Skills', 'Writing Skills', 'Punctuation',
-        'Concord', 'Tenses', 'Parts of Speech', 'Sentence Structure',
-        'Paragraph Development', 'Narrative Writing', 'Descriptive Writing',
-        'Argumentative Writing', 'Expository Writing', 'Creative Writing',
-        'Literary Devices', 'Poetry', 'Prose', 'Drama', 'Literature Analysis',
-        'Word Formation', 'Stress Patterns', 'Intonation', 'Vowel Sounds',
-        'Consonant Sounds', 'Syllable Division', 'Homophones', 'Homonyms',
-        'Register', 'Cloze Passage'
+        'Comprehension Passage', 'Cloze Passage', 'Reading Text', 'Sentence Interpretation',
+        'Antonyms', 'Synonyms', 'Sentence completion', 'Oral Forms'
       ],
       government: [
         "Basic Concepts in Government", "Forms of Government", "Arms of Government", 
