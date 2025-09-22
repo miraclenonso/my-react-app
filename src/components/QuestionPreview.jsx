@@ -7,10 +7,10 @@ function QuestionPreview() {
   const { state } = useLocation();
   const subject = state?.subject || '';
   const tableName = subject.toLowerCase() === 'english'
-  ? 'utme_english_language_questions'
-  : subject.toLowerCase() === 'novel'
-    ? 'utme_reading_text_questions'
-    : `utme_${subject.toLowerCase()}_questions`;
+    ? 'utme_english_language_questions'
+    : subject.toLowerCase() === 'novel'
+      ? 'utme_reading_text_questions'
+      : `utme_${subject.toLowerCase()}_questions`;
 
   useEffect(() => console.log('Table name:', tableName), []);
 
@@ -18,6 +18,10 @@ function QuestionPreview() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const questionData = state?.questionData || {};
+
+  const normalize = (str) => (str || '').toString().trim().toLowerCase();
+  const isClozeOrComprehension = ['comprehension', 'comprehension passage', 'cloze', 'cloze passage']
+    .includes(normalize(questionData.topic));
 
   const handleEdit = () => {
     navigate('/upload', { state: { questionData } });
@@ -41,12 +45,13 @@ function QuestionPreview() {
           correct_option: questionData.correct_option || '',
           explanation: questionData.explanation || '',
           topic: questionData.topic || '',
+          sub_topic: questionData.sub_topic || '', // ✅ include sub_topic
           section: questionData.section || '',
           subject: 'English Language',
-          ...(questionData.topic === 'Comprehension' && {
+          ...(isClozeOrComprehension && {
             passage: questionData.passage || '',
             group_id: questionData.group_id || '',
-            order_number: questionData.order_number ? parseInt(questionData.order_number) : null
+            order_number: questionData.order_number ? parseInt(questionData.order_number, 10) : null
           })
         };
       } else if (subject.toLowerCase() === 'novel') {
@@ -93,7 +98,7 @@ function QuestionPreview() {
       
     } catch (error) {
       console.error('Insert error:', error);
-      setStatusMessage(`❌ Failed to submit question: ${error.message}`);
+      setStatusMessage(`❌ Failed to submit question: ${error.message || error}`);
       setIsSubmitting(false);
     }
   };
@@ -253,16 +258,23 @@ function QuestionPreview() {
               className="preview-image" 
             />
           )}
-          
+
           {subject.toLowerCase() === 'english' && questionData.section && (
             <div className="preview-topic">
               <strong>Section:</strong> {questionData.section}
             </div>
           )}
+
+          {/* Sub-topic display (added) */}
+          {subject.toLowerCase() === 'english' && questionData.sub_topic && (
+            <div className="preview-topic">
+              <strong>Sub-topic:</strong> {questionData.sub_topic}
+            </div>
+          )}
           
           <p className="preview-question">{questionData.question}</p>
           
-          {subject.toLowerCase() === 'english' && questionData.topic === 'Comprehension' && questionData.passage && (
+          {subject.toLowerCase() === 'english' && isClozeOrComprehension && questionData.passage && (
             <div className="preview-passage">
               <h4>Passage:</h4>
               <p>{questionData.passage}</p>
@@ -294,14 +306,14 @@ function QuestionPreview() {
             </div>
           )}
           
-          {subject.toLowerCase() === 'english' && questionData.topic === 'Comprehension' && (
+          {subject.toLowerCase() === 'english' && isClozeOrComprehension && (
             <>
               {questionData.group_id && (
                 <div className="preview-topic">
                   <strong>Group ID:</strong> {questionData.group_id}
                 </div>
               )}
-              {questionData.order_number && (
+              {(questionData.order_number || questionData.order_number === 0) && (
                 <div className="preview-topic">
                   <strong>Order Number:</strong> {questionData.order_number}
                 </div>
