@@ -299,24 +299,27 @@ function QuestionPreview() {
             </div>
           )}
           
-          {subject.toLowerCase() === 'english' && isClozeOrComprehension && (
-  <>
-    {questionData.passage && (
-      <div className="preview-passage">
-        <h4>Passage:</h4>
-        <p>{questionData.passage}</p>
+          {subject.toLowerCase() === 'english' &&
+  (
+    normalize(questionData.topic) === 'comprehension passage' ||
+    normalize(questionData.topic) === 'cloze passage'
+  ) && (
+    <>
+      {questionData.passage && (
+        <div className="preview-passage">
+          <h4>Passage:</h4>
+          <p>{questionData.passage}</p>
+        </div>
+      )}
+      <div className="preview-topic">
+        <strong>Group ID:</strong> {questionData.group_id || '—'}
       </div>
-    )}
-
-    <div className="preview-topic">
-      <strong>Group ID:</strong> {questionData.group_id || '—'}
-    </div>
-
-    <div className="preview-topic">
-      <strong>Order Number:</strong> {questionData.order_number ?? '—'}
-    </div>
-  </>
+      <div className="preview-topic">
+        <strong>Order Number:</strong> {questionData.order_number ?? '—'}
+      </div>
+    </>
 )}
+
 
         </div>
         
