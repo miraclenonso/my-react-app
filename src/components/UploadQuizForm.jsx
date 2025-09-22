@@ -110,7 +110,7 @@ function UploadQuizForm() {
         "Measures of Dispersion", "Permutation and Combination", "Probability"
       ],
       english: [
-        'Comprehension Passage', 'Cloze Passage', 'Reading Text', 'Sentence Interpretation',
+        'Comprehension Passage', 'Cloze Passage', 'Sentence Interpretation',
         'Antonyms', 'Synonyms', 'Sentence completion', 'Oral Forms'
       ],
       government: [
@@ -506,7 +506,7 @@ function UploadQuizForm() {
         )}
 
         {/* Passage & Group fields for comprehension/cloze */}
-        {(formData.topic === 'Comprehension' || formData.topic === 'Cloze Passage') && (
+        {(formData.topic === 'Comprehension Passage' || formData.topic === 'Cloze Passage') && (
           <>
             <label>Passage: <span className="required">*</span></label>
             <textarea
@@ -549,14 +549,6 @@ function UploadQuizForm() {
             Preview Question
           </button>
 
-          <button
-            type="button"
-            className="submit-btn"
-            onClick={handleSubmit}
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? 'Uploading...' : 'Submit Question'}
-          </button>
         </div>
 
         {statusMessage && (
