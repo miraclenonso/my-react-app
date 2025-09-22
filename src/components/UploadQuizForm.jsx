@@ -447,7 +447,7 @@ const getTableName = () => {
             {errors.section && <span className="error-message">{errors.section}</span>}
 
             {/* Show these fields only when Comprehension is selected */}
-            {formData.topic === 'Comprehension' && (
+            {(formData.topic === 'Comprehension' || formData.topic === 'Cloze Passage') && (
               <>
                 <label>Passage: <span className="required">*</span></label>
                 <textarea 
