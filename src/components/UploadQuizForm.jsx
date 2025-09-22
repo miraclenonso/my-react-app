@@ -211,22 +211,33 @@ function UploadQuizForm() {
   }, [subject, navigate]);
 
   const validateForm = () => {
-    const newErrors = {};
+  const newErrors = {};
 
-    if (isBlank(formData.question)) newErrors.question = 'Question is required';
-    if (!formData.correct_option) newErrors.correct_option = 'Correct option is required';
-    if (isBlank(formData.option_a)) newErrors.option_a = 'Option A is required';
-    if (isBlank(formData.option_b)) newErrors.option_b = 'Option B is required';
-    if (isBlank(formData.option_c)) newErrors.option_c = 'Option C is required';
-    if (isBlank(formData.option_d)) newErrors.option_d = 'Option D is required';
-    if (isBlank(formData.explanation)) newErrors.explanation = 'Explanation is required';
-    if (isBlank(formData.topic)) newErrors.topic = 'Topic is required';
-    if (subject === 'english' && isBlank(formData.sub_topic)) newErrors.sub_topic = 'Sub-topic is required';
-    if (subject === 'english' && !formData.section) newErrors.section = 'Section is required';
+  if (isBlank(formData.question)) newErrors.question = 'Question is required';
+  if (!formData.correct_option) newErrors.correct_option = 'Correct option is required';
+  if (isBlank(formData.option_a)) newErrors.option_a = 'Option A is required';
+  if (isBlank(formData.option_b)) newErrors.option_b = 'Option B is required';
+  if (isBlank(formData.option_c)) newErrors.option_c = 'Option C is required';
+  if (isBlank(formData.option_d)) newErrors.option_d = 'Option D is required';
+  if (isBlank(formData.explanation)) newErrors.explanation = 'Explanation is required';
+  if (isBlank(formData.topic)) newErrors.topic = 'Topic is required';
+  if (subject === 'english' && isBlank(formData.sub_topic)) newErrors.sub_topic = 'Sub-topic is required';
+  if (subject === 'english' && !formData.section) newErrors.section = 'Section is required';
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  // ✅ Add validation for comprehension/cloze
+  if (
+    formData.topic === 'Comprehension Passage' ||
+    formData.topic === 'Cloze Passage'
+  ) {
+    if (isBlank(formData.passage)) newErrors.passage = 'Passage is required';
+    if (isBlank(formData.group_id)) newErrors.group_id = 'Group ID is required';
+    if (!formData.order_number) newErrors.order_number = 'Order Number is required';
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
