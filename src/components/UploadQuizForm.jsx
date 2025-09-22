@@ -225,14 +225,14 @@ function UploadQuizForm() {
   if (subject === 'english' && !formData.section) newErrors.section = 'Section is required';
 
   // ✅ Add validation for comprehension/cloze
-  if (
-    formData.topic === 'Comprehension Passage' ||
-    formData.topic === 'Cloze Passage'
-  ) {
-    if (isBlank(formData.passage)) newErrors.passage = 'Passage is required';
-    if (isBlank(formData.group_id)) newErrors.group_id = 'Group ID is required';
-    if (!formData.order_number) newErrors.order_number = 'Order Number is required';
-  }
+  const normalize = (str) => (str || '').trim().toLowerCase();
+
+if (['comprehension passage', 'cloze passage'].includes(normalize(formData.topic))) {
+  if (isBlank(formData.passage)) newErrors.passage = 'Passage is required';
+  if (isBlank(formData.group_id)) newErrors.group_id = 'Group ID is required';
+  if (!formData.order_number) newErrors.order_number = 'Order Number is required';
+}
+
 
   setErrors(newErrors);
   return Object.keys(newErrors).length === 0;
