@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './SubjectSelection.css';
 
@@ -17,13 +17,36 @@ const subjects = [
 
 function SubjectSelection() {
   const navigate = useNavigate();
+  const [questionType, setQuestionType] = useState('');
 
   const handleSubjectSelect = (subjectId) => {
-    navigate(`/upload/${subjectId}`);
+    if (!questionType) {
+      alert('Please select a question type first.');
+      return;
+    }
+
+    if (questionType === 'practice') {
+      navigate(`/quizupload/${subjectId}`);
+    } else if (questionType === 'flashcard') {
+      navigate(`/flashcardsuploadscreen/${subjectId}`);
+    }
   };
 
   return (
     <div className="subject-selection-container">
+      <h1 className="selection-title">Select Question Type</h1>
+      <div style={{ marginBottom: '20px', textAlign: 'center' }}>
+        <select
+          value={questionType}
+          onChange={(e) => setQuestionType(e.target.value)}
+          className="dropdown-select"
+        >
+          <option value="">-- Select --</option>
+          <option value="practice">Practice Exam Questions</option>
+          <option value="flashcard">Flashcard Questions</option>
+        </select>
+      </div>
+
       <h1 className="selection-title">Select Subject to Upload Questions</h1>
       <div className="subjects-grid">
         {subjects.map((subject) => (
