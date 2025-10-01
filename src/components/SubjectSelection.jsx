@@ -17,7 +17,7 @@ const subjects = [
 
 function SubjectSelection() {
   const navigate = useNavigate();
-  const [questionType, setQuestionType] = useState('');
+  const [questionType, setQuestionType] = useState('practice');
 
   const handleSubjectSelect = (subjectId) => {
     if (!questionType) {
