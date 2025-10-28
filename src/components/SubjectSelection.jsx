@@ -13,6 +13,7 @@ const subjects = [
   { id: 'commerce', name: 'Commerce', color: '#480ca8' },
   { id: 'crs', name: 'Crs', color: '#7209b7' },
   { id: 'novel', name: 'Reading Text', color: '#7209b7' },
+  { id: 'lit in eng', name: 'Literature In English', color: '#4cc9f0' },
 ];
 
 function SubjectSelection() {
